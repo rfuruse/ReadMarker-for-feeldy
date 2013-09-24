@@ -1,0 +1,24 @@
+{
+	"manifest_version": 2,
+	"name": "ReadMarker for feedly",
+	"version": "0.1",
+	"description": "",
+	"icons": {
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+	"permissions":[
+		"webRequest",
+		"*://*.feedly.com/*"
+	],
+	"background": {
+		"scripts": [
+			"background/background.js"
+		]
+	},
+	"content_scripts": [ {
+		"js": [ "readmarker.js" ],
+		"matches": [ "*://*.feedly.com/*" ]
+	} ],
+	"options_page": "option/index.html"
+}
